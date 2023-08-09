@@ -1,0 +1,776 @@
+Track 0
+0 : TrackEvent { delta: u28(0), kind: Meta(TrackName([70, 108, 117, 116, 101, 32, 49, 0])) }
+1 : TrackEvent { delta: u28(0), kind: Meta(TimeSignature(4, 2, 24, 8)) }
+2 : TrackEvent { delta: u28(0), kind: Meta(KeySignature(0, false)) }
+3 : TrackEvent { delta: u28(0), kind: Meta(Tempo(u24(400000))) }
+4 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(121), value: u7(0) } } }
+5 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: ProgramChange { program: u7(73) } } }
+6 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(7), value: u7(100) } } }
+7 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(10), value: u7(64) } } }
+8 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(91), value: u7(0) } } }
+9 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(93), value: u7(0) } } }
+10 : TrackEvent { delta: u28(0), kind: Meta(MidiPort(u7(0))) }
+11 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+12 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+13 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+14 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+15 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+16 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+17 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+18 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+19 : TrackEvent { delta: u28(341), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+20 : TrackEvent { delta: u28(19), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+21 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+22 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+23 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+24 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+25 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+26 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+27 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(96) } } }
+28 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+29 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(0) } } }
+30 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(96) } } }
+31 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(0) } } }
+32 : TrackEvent { delta: u28(487), kind: Midi { channel: u4(0), message: NoteOn { key: u7(57), vel: u7(96) } } }
+33 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+34 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(57), vel: u7(0) } } }
+35 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+36 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+37 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+38 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+39 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(96) } } }
+40 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(0) } } }
+41 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+42 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+43 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+44 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+45 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(96) } } }
+46 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(0) } } }
+47 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+48 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+49 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+50 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+51 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(96) } } }
+52 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(0) } } }
+53 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+54 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+55 : TrackEvent { delta: u28(265), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+56 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+57 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+58 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+59 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+60 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+61 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+62 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+63 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+64 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+65 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+66 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+67 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+68 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+69 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+70 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+71 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+72 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+73 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+74 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+75 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+76 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+77 : TrackEvent { delta: u28(265), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(96) } } }
+78 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(0) } } }
+79 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+80 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+81 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+82 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+83 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(96) } } }
+84 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(0) } } }
+85 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+86 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+87 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+88 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+89 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(96) } } }
+90 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(0) } } }
+91 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+92 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+93 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+94 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+95 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(96) } } }
+96 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(59), vel: u7(0) } } }
+97 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+98 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+99 : TrackEvent { delta: u28(265), kind: Midi { channel: u4(0), message: NoteOn { key: u7(60), vel: u7(96) } } }
+100 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(60), vel: u7(0) } } }
+101 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+102 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+103 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+104 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+105 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(60), vel: u7(96) } } }
+106 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(60), vel: u7(0) } } }
+107 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+108 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+109 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+110 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+111 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(60), vel: u7(96) } } }
+112 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(60), vel: u7(0) } } }
+113 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+114 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+115 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+116 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+117 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(66), vel: u7(96) } } }
+118 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(66), vel: u7(0) } } }
+119 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+120 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+121 : TrackEvent { delta: u28(133), kind: Midi { channel: u4(0), message: NoteOn { key: u7(57), vel: u7(96) } } }
+122 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(57), vel: u7(0) } } }
+123 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+124 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+125 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+126 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+127 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(96) } } }
+128 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(0) } } }
+129 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+130 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+131 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+132 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+133 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(96) } } }
+134 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(0) } } }
+135 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+136 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+137 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(96) } } }
+138 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(64), vel: u7(0) } } }
+139 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(96) } } }
+140 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(61), vel: u7(0) } } }
+141 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+142 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+143 : TrackEvent { delta: u28(265), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+144 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+145 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+146 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+147 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+148 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+149 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+150 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+151 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+152 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+153 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+154 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+155 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+156 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+157 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+158 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+159 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(96) } } }
+160 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(65), vel: u7(0) } } }
+161 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+162 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+163 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+164 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+165 : TrackEvent { delta: u28(265), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+166 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+167 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+168 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+169 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+170 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+171 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+172 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+173 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+174 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+175 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+176 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+177 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+178 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+179 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+180 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+181 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+182 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+183 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(96) } } }
+184 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(62), vel: u7(0) } } }
+185 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+186 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+187 : TrackEvent { delta: u28(385), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(96) } } }
+188 : TrackEvent { delta: u28(341), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+189 : TrackEvent { delta: u28(19), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(96) } } }
+190 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+191 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(96) } } }
+192 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+193 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+194 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+195 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(96) } } }
+196 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+197 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(96) } } }
+198 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+199 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(96) } } }
+200 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+201 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(80) } } }
+202 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(0) } } }
+203 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+204 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+205 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+206 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+207 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+208 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+209 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+210 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+211 : TrackEvent { delta: u28(133), kind: Midi { channel: u4(0), message: NoteOn { key: u7(70), vel: u7(80) } } }
+212 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(70), vel: u7(0) } } }
+213 : TrackEvent { delta: u28(4), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+214 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+215 : TrackEvent { delta: u28(4), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+216 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+217 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+218 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+219 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(80) } } }
+220 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+221 : TrackEvent { delta: u28(64), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(80) } } }
+222 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+223 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(80) } } }
+224 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+225 : TrackEvent { delta: u28(7), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+226 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+227 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(80) } } }
+228 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+229 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(80) } } }
+230 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(0) } } }
+231 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+232 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+233 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+234 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+235 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+236 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+237 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+238 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+239 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(80) } } }
+240 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+241 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+242 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+243 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+244 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+245 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+246 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+247 : TrackEvent { delta: u28(64), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+248 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+249 : TrackEvent { delta: u28(64), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+250 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+251 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+252 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+253 : TrackEvent { delta: u28(733), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(80) } } }
+254 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(0) } } }
+255 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+256 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+257 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+258 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+259 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+260 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+261 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+262 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+263 : TrackEvent { delta: u28(2173), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(80) } } }
+264 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(76), vel: u7(0) } } }
+265 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+266 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+267 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+268 : TrackEvent { delta: u28(253), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+269 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+270 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+271 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+272 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+273 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+274 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+275 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+276 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+277 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(80) } } }
+278 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+279 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(67), vel: u7(0) } } }
+280 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+281 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+282 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+283 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(80) } } }
+284 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+285 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(0), message: NoteOn { key: u7(69), vel: u7(0) } } }
+286 : TrackEvent { delta: u28(127), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+287 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+288 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+289 : TrackEvent { delta: u28(64), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+290 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+291 : TrackEvent { delta: u28(56), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+292 : TrackEvent { delta: u28(64), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(80) } } }
+293 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(71), vel: u7(0) } } }
+294 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(80) } } }
+295 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(0), message: Controller { controller: u7(2), value: u7(80) } } }
+296 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(0), message: NoteOn { key: u7(72), vel: u7(0) } } }
+297 : TrackEvent { delta: u28(1), kind: Meta(EndOfTrack) }
+Track 1
+0 : TrackEvent { delta: u28(0), kind: Meta(TrackName([70, 108, 117, 116, 101, 32, 50, 0])) }
+1 : TrackEvent { delta: u28(0), kind: Meta(KeySignature(0, false)) }
+2 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(121), value: u7(0) } } }
+3 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: ProgramChange { program: u7(73) } } }
+4 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(7), value: u7(100) } } }
+5 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(10), value: u7(64) } } }
+6 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(91), value: u7(0) } } }
+7 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(93), value: u7(0) } } }
+8 : TrackEvent { delta: u28(0), kind: Meta(MidiPort(u7(0))) }
+9 : TrackEvent { delta: u28(360), kind: Midi { channel: u4(1), message: NoteOn { key: u7(41), vel: u7(96) } } }
+10 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+11 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(1), message: NoteOn { key: u7(41), vel: u7(0) } } }
+12 : TrackEvent { delta: u28(145), kind: Midi { channel: u4(1), message: NoteOn { key: u7(40), vel: u7(96) } } }
+13 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+14 : TrackEvent { delta: u28(455), kind: Midi { channel: u4(1), message: NoteOn { key: u7(40), vel: u7(0) } } }
+15 : TrackEvent { delta: u28(25), kind: Midi { channel: u4(1), message: NoteOn { key: u7(56), vel: u7(96) } } }
+16 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+17 : TrackEvent { delta: u28(113), kind: Midi { channel: u4(1), message: NoteOn { key: u7(56), vel: u7(0) } } }
+18 : TrackEvent { delta: u28(27247), kind: Midi { channel: u4(1), message: NoteOn { key: u7(36), vel: u7(80) } } }
+19 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+20 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(36), vel: u7(0) } } }
+21 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(48), vel: u7(80) } } }
+22 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(48), vel: u7(0) } } }
+23 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(40), vel: u7(80) } } }
+24 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+25 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(40), vel: u7(0) } } }
+26 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(52), vel: u7(80) } } }
+27 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(52), vel: u7(0) } } }
+28 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(41), vel: u7(80) } } }
+29 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+30 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(41), vel: u7(0) } } }
+31 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(53), vel: u7(80) } } }
+32 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+33 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(53), vel: u7(0) } } }
+34 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(42), vel: u7(80) } } }
+35 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+36 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(42), vel: u7(0) } } }
+37 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(54), vel: u7(80) } } }
+38 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+39 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(54), vel: u7(0) } } }
+40 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(43), vel: u7(80) } } }
+41 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+42 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(43), vel: u7(0) } } }
+43 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(55), vel: u7(80) } } }
+44 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+45 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(55), vel: u7(0) } } }
+46 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(31), vel: u7(80) } } }
+47 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+48 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(31), vel: u7(0) } } }
+49 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(43), vel: u7(80) } } }
+50 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+51 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(43), vel: u7(0) } } }
+52 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(36), vel: u7(80) } } }
+53 : TrackEvent { delta: u28(0), kind: Midi { channel: u4(1), message: Controller { controller: u7(2), value: u7(80) } } }
+54 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(36), vel: u7(0) } } }
+55 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(31), vel: u7(80) } } }
+56 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(31), vel: u7(0) } } }
+57 : TrackEvent { delta: u28(13), kind: Midi { channel: u4(1), message: NoteOn { key: u7(36), vel: u7(80) } } }
+58 : TrackEvent { delta: u28(227), kind: Midi { channel: u4(1), message: NoteOn { key: u7(36), vel: u7(0) } } }
+59 : TrackEvent { delta: u28(1), kind: Meta(EndOfTrack) }
+0.30000000000000004
+0.3791666666666667
+0.3677128389403496
+0.35625901121403253
+0.34480518348771544
+0.33335135576139835
+0.3218975280350813
+0.3104437003087642
+0.29898987258244714
+0.28753604485613005
+0.27608221712981296
+0.26462838940349587
+0.2531745616771788
+0.2417207339508617
+0.2302669062245446
+0.2188130784982275
+0.20735925077191042
+0.19590542304559333
+0.18445159531927627
+0.17299776759295918
+0.16154393986664206
+0.15009011214032497
+0.13863628441400788
+0.1271824566876908
+0.11572862896137376
+0.10427480123505672
+0.09282097350873969
+0.08136714578242267
+0.06991331805610564
+0.0584594903297886
+0.04700566260347157
+0.03555183487715454
+0.02409800715083751
+0.012644179424520476
+0.0011903516982034457
+0.12083333333333333
+0.3791666666666667
+0.36703175890148454
+0.3548968511363023
+0.3427619433711201
+0.3306270356059379
+0.31849212784075576
+0.3063572200755736
+0.2942223123103914
+0.28208740454520925
+0.2699524967800271
+0.2578175890148449
+0.24568268124966278
+0.23354777348448066
+0.22141286571929855
+0.20927795795411644
+0.19714305018893433
+0.18500814242375221
+0.17287323465857007
+0.16073832689338788
+0.14860341912820568
+0.1364685113630235
+0.12433360359784129
+0.11219869583265918
+0.10006378806747707
+0.08792888030229497
+0.07579397253711286
+0.06365906477193073
+0.0515241570067486
+0.039389249241566476
+0.02725434147638435
+0.015119433711202222
+0.002984525946020094
+0.020833333333333336
+0.09416666666666668
+0.08935092532866988
+0.0845351839906731
+0.0797194426526763
+0.07490370131467952
+0.07008795997668273
+0.06527221863868594
+0.060456477300689156
+0.05564073596269236
+0.050824994624695564
+0.04600925328669877
+0.04119351194870197
+0.03637777061070518
+0.03156202927270839
+0.02674628793471159
+0.02193054659671479
+0.017114805258717992
+0.012299063920721198
+0.007483322582724404
+0.002667581244727608
+22.705833333333334
+0.18916666666666668
+0.17387764093478095
+0.15858861520289522
+0.1432995894710095
+0.12801056373912376
+0.11272153800723804
+0.09743251227535232
+0.0821434865434666
+0.06685446081158089
+0.051565435079695174
+0.03627640934780947
+0.020987383615923748
+0.005698357884038026
+0.010833333333333334
+0.18916666666666668
+0.18152215380072376
+0.17387764093478084
+0.16623312806883792
+0.15858861520289502
+0.15094410233695213
+0.14329958947100924
+0.13565507660506634
+0.12801056373912342
+0.12036605087318054
+0.11272153800723769
+0.10507702514129484
+0.09743251227535199
+0.08978799940940914
+0.08214348654346629
+0.07449897367752344
+0.06685446081158058
+0.05920994794563774
+0.05156543507969488
+0.043920922213752024
+0.036276409347809166
+0.028631896481866308
+0.02098738361592345
+0.01334287074998059
+0.0056983578840377296
+0.010833333333333334
+0.18916666666666668
+0.17703175890148454
+0.1648968511363024
+0.15276194337112026
+0.14062703560593812
+0.12849212784075598
+0.11635722007557385
+0.10422231231039172
+0.0920874045452096
+0.07995249678002747
+0.06781758901484534
+0.05568268124966322
+0.043547773484481085
+0.031412865719298945
+0.019277957954116808
+0.007143050188934679
+0.010833333333333334
+0.18916666666666668
+0.18309921278407562
+0.1770317589014846
+0.17096430501889356
+0.16489685113630254
+0.1588293972537115
+0.15276194337112048
+0.14669448948852945
+0.14062703560593842
+0.13455958172334737
+0.1284921278407563
+0.12242467395816524
+0.11635722007557417
+0.1102897661929831
+0.10422231231039203
+0.09815485842780096
+0.09208740454520989
+0.08601995066261882
+0.07995249678002775
+0.07388504289743668
+0.06781758901484561
+0.06175013513225454
+0.055682681249663475
+0.04961522736707241
+0.04354777348448135
+0.037480319601890286
+0.03141286571929922
+0.025345411836708156
+0.01927795795411709
+0.013210504071526023
+0.007143050188934957
+0.001075596306343891
+0.010833333333333334
+0.18916666666666668
+0.17771283894034964
+0.1662590112140326
+0.15480518348771558
+0.14335135576139854
+0.1318975280350815
+0.12044370030876447
+0.10898987258244744
+0.0975360448561304
+0.08608221712981337
+0.07462838940349634
+0.0631745616771793
+0.05172073395086227
+0.040266906224545235
+0.028813078498228204
+0.01735925077191117
+0.005905423045594137
+0.010833333333333334
+0.18916666666666668
+0.1834397528035082
+0.17771283894034967
+0.17198592507719118
+0.1662590112140327
+0.1605320973508742
+0.15480518348771571
+0.14907826962455722
+0.14335135576139874
+0.13762444189824025
+0.13189752803508176
+0.12617061417192327
+0.12044370030876474
+0.11471678644560622
+0.1089898725824477
+0.10326295871928919
+0.09753604485613067
+0.09180913099297215
+0.08608221712981363
+0.08035530326665512
+0.0746283894034966
+0.06890147554033808
+0.06317456167717958
+0.05744764781402106
+0.05172073395086255
+0.045993820087704036
+0.04026690622454552
+0.034539992361387
+0.02881307849822848
+0.023086164635069965
+0.017359250771911448
+0.011632336908752934
+0.00590542304559442
+0.00017850918243590523
+0.010833333333333334
+0.18916666666666668
+0.17835569289391473
+0.16754471912116278
+0.15673374534841084
+0.14592277157565883
+0.13511179780290683
+0.12430082403015483
+0.11348985025740282
+0.10267887648465082
+0.09186790271189882
+0.08105692893914682
+0.07024595516639481
+0.059434981393642804
+0.048624007620890794
+0.03781303384813878
+0.02700206007538676
+0.016191086302634744
+0.005380112529882735
+0.010833333333333334
+0.18916666666666668
+0.1837611797802907
+0.17835569289391473
+0.17295020600753874
+0.16754471912116276
+0.16213923223478677
+0.15673374534841078
+0.1513282584620348
+0.14592277157565883
+0.14051728468928285
+0.13511179780290686
+0.12970631091653087
+0.12430082403015488
+0.11889533714377888
+0.11348985025740287
+0.10808436337102686
+0.10267887648465085
+0.09727338959827485
+0.09186790271189883
+0.08646241582552283
+0.08105692893914682
+0.07565144205277081
+0.07024595516639481
+0.06484046828001881
+0.05943498139364281
+0.0540294945072668
+0.0486240076208908
+0.04321852073451479
+0.03781303384813879
+0.03240754696176279
+0.02700206007538678
+0.021596573189010777
+0.01619108630263477
+0.010785599416258763
+0.005380112529882759
+0.010833333333333334
+0.18916666666666668
+0.17896246622749054
+0.1687582657883144
+0.15855406534913827
+0.14834986490996213
+0.138145664470786
+0.12794146403160986
+0.11773726359243374
+0.1075330631532576
+0.09732886271408146
+0.08712466227490533
+0.0769204618357292
+0.06671626139655308
+0.056512060957376965
+0.04630786051820084
+0.03610366007902473
+0.025899459639848604
+0.015695259200672485
+0.005491058761496366
+0.010833333333333334
+0.18916666666666668
+0.18406456644707866
+0.17896246622749062
+0.17386036600790258
+0.16875826578831452
+0.16365616556872647
+0.15855406534913843
+0.15345196512955037
+0.1483498649099623
+0.14324776469037423
+0.13814566447078616
+0.1330435642511981
+0.12794146403161002
+0.12283936381202197
+0.11773726359243392
+0.11263516337284586
+0.10753306315325781
+0.10243096293366975
+0.0973288627140817
+0.09222676249449364
+0.08712466227490559
+0.08202256205531754
+0.07692046183572948
+0.07181836161614143
+0.06671626139655337
+0.06161416117696531
+0.05651206095737725
+0.05140996073778919
+0.04630786051820113
+0.041205760298613066
+0.036103660079025005
+0.031001559859436943
+0.025899459639848882
+0.02079735942026082
+0.01569525920067276
+0.0105931589810847
+0.005491058761496639
+0.00038895854190857965
+0.010833333333333334
+0.18916666666666668
+0.16875826578831457
+0.14834986490996238
+0.12794146403161014
+0.1075330631532579
+0.08712466227490567
+0.06671626139655344
+0.046307860518201203
+0.025899459639848976
+0.005491058761496743
+0.010833333333333334
+0.18916666666666668
+0.17896246622749057
+0.16875826578831446
+0.1585540653491383
+0.1483498649099621
+0.13814566447078594
+0.12794146403160978
+0.11773726359243365
+0.10753306315325753
+0.09732886271408141
+0.08712466227490528
+0.07692046183572916
+0.06671626139655304
+0.05651206095737693
+0.046307860518200815
+0.0361036600790247
+0.025899459639848584
+0.01569525920067247
+0.005491058761496358
+0.010833333333333334
+0.18916666666666668
+0.1738776409347809
+0.15858861520289508
+0.14329958947100926
+0.12801056373912348
+0.11272153800723775
+0.09743251227535203
+0.08214348654346632
+0.0668544608115806
+0.05156543507969487
+0.03627640934780914
+0.02098738361592341
+0.0056983578840376905
+0.010833333333333334
+0.18916666666666668
+0.16875826578831457
+0.14834986490996246
+0.12794146403161036
+0.10753306315325813
+0.08712466227490588
+0.06671626139655364
+0.046307860518201405
+0.02589945963984917
+0.005491058761496935
+0.010833333333333334
+0.18916666666666668
+0.17387764093478095
+0.15858861520289522
+0.1432995894710095
+0.12801056373912376
+0.11272153800723804
+0.09743251227535232
+0.0821434865434666
+0.06685446081158089
+0.051565435079695174
+0.03627640934780946
+0.020987383615923737
+0.0056983578840380175

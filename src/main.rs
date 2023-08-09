@@ -9,19 +9,19 @@ use itertools::{sorted, Itertools};
 use midly::{MetaMessage, MidiMessage, Smf, TrackEventKind};
 
 fn pitch_frequency(key: u8) -> f64 {
-    // A4 is 72 and index will be reported u7(value)
-    440. * f64::powf(2., f64::from(key as i32 - 72) / 12.)
+    // A4 is 69 and index will be reported u7(value)
+    440f64 * f64::powf(2f64, f64::from(key as i32 - 69) / 12f64)
 }
 
 fn pitch_to_frametime(key: u8) -> f64 {
-    1. / pitch_frequency(key)
+    1f64 / pitch_frequency(key)
 }
 
 fn midi_tick_to_duration(tempo: u32, tick: u32) -> f64 {
     // tempo is micro-second / quarter note
     // a quarter node is 480 ticks
     // duration will be in second
-    f64::from(tempo) / 1_000_000. / 480. * f64::from(tick)
+    f64::from(tempo) / 1_000_000f64 / 480f64 * f64::from(tick)
 }
 
 fn frametime_tick_to_repeat(tempo: u32, frametime: f64, tick: u32) -> u32 {
@@ -30,7 +30,16 @@ fn frametime_tick_to_repeat(tempo: u32, frametime: f64, tick: u32) -> u32 {
     (midi_tick_to_duration(tempo, tick) / frametime) as u32
 }
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, PartialEq)]
+struct EmitInfo {
+    // #[derive(Copy)]
+    sound: String,
+    channel: i32,
+    volume: f32,
+    from: u32,
+}
+
+#[derive(Clone, PartialEq)]
 enum Command {
     None,
     /// `impulse 101`
@@ -49,24 +58,52 @@ enum Command {
     Nice3,
     Stopsound,
     Attack1,
+    WpnMoveSelect,
+    Emit(EmitInfo),
+    EmitDynamic(EmitInfo),
 }
 static mut switch: u8 = 1;
 fn format_bulk(frametime: f64, repeat: u32, command: Command) -> String {
-    if command == Command::Ducktap {
-        format!("-----d----|------|------|{}|-|-|{}\n", frametime, repeat)
-    } else if command == Command::Use {
-        format!("----------|------|--u---|{}|-|-|{}\n", frametime, repeat)
-    } else {
-        format!(
+    match command {
+        Command::Emit(EmitInfo {
+            sound,
+            channel,
+            volume,
+            from,
+        }) => format!(
+            // bxt_emit_sound "common/bodysplat.wav 0 255 0 0 0.8 0 100"
+            // Usage: bxt_emit_sound <sound> <channel> [volume] [from] [to] [attenuation] [flag] [pitch]
+            "----------|------|------|{}|-|-|{}|bxt_emit_sound \"{} {} {} {} 0 0.8 0 100\"\n",
+            frametime, repeat, sound, channel, volume, from
+        ),
+        Command::EmitDynamic(EmitInfo {
+            sound,
+            channel,
+            volume,
+            from,
+        }) => format!(
+            // bxt_emit_sound_dynamic "common/bodysplat.wav 0 255 0 0 0.8 0 100"
+            // Usage: bxt_emit_sound <sound> <channel> [volume] [from] [to] [attenuation] [flag] [pitch]
+            "----------|------|------|{}|-|-|{}|bxt_emit_sound_dynamic \"{} {} {} {} 0 0.8 0 100\"\n",
+            frametime, repeat, sound, channel, volume, from
+        ),
+        Command::Ducktap => format!("-----d----|------|------|{}|-|-|{}\n", frametime, repeat),
+        Command::Use => format!("----------|------|--u---|{}|-|-|{}\n", frametime, repeat),
+        _ => format!(
             "----------|------|------|{}|-|-|{}|{}\n",
             frametime,
             repeat,
             match command {
                 Command::None => "",
+                // Command::Emit(EmitInfo {
+                //     sound,
+                //     channel,
+                //     volume,
+                // }) => format!("bxt_emit_sound {} {} {}", sound.clone(), channel, volume).as_str(),
                 Command::Flashlight => "impulse 100",
                 Command::Nice => "speak player/sprayer",
-                Command::Nice2 => "speak \"common/bodysplat(v60)\"",
-                Command::Nice3 => "speak squad",
+                Command::Nice2 => "speak \"common/bodysplat(v30)\"",
+                Command::Nice3 => "speak \"common/wpn_moveselect(v30)\"",
                 Command::SwitchScroll(num) => match num {
                     0 => "slot0",
                     1 => "slot1",
@@ -88,10 +125,53 @@ fn format_bulk(frametime: f64, repeat: u32, command: Command) -> String {
                 }
                 Command::Stopsound => "stopsound",
                 Command::Attack1 => "+attack; wait; -attack",
+                Command::WpnMoveSelect => "speak \"common/wpn_moveselect\"",
                 _ => "",
             }
-        )
+        ),
     }
+    // if command == Command::Ducktap {
+    //     format!("-----d----|------|------|{}|-|-|{}\n", frametime, repeat)
+    // } else if command == Command::Use {
+    //     format!("----------|------|--u---|{}|-|-|{}\n", frametime, repeat)
+    // } else {
+    //     format!(
+    //         "----------|------|------|{}|-|-|{}|{}\n",
+    //         frametime,
+    //         repeat,
+    //         match command {
+    //             Command::None => "",
+    //             Command::Flashlight => "impulse 100",
+    //             Command::Nice => "speak player/sprayer",
+    //             Command::Nice2 => "speak \"common/bodysplat(v60)\"",
+    //             Command::Nice3 => "speak squad",
+    //             Command::SwitchScroll(num) => match num {
+    //                 0 => "slot0",
+    //                 1 => "slot1",
+    //                 2 => "slot2",
+    //                 3 => "slot3",
+    //                 4 => "slot4",
+    //                 5 => "slot5",
+    //                 _ => "",
+    //             },
+    //             Command::SwitchGroup => {
+    //                 unsafe {
+    //                     switch = switch % 2 + 1;
+    //                     match switch {
+    //                         1 => "slot1",
+    //                         2 => "slot2",
+    //                         _ => "slot0",
+    //                     }
+    //                 }
+    //             }
+    //             Command::Stopsound => "stopsound",
+    //             Command::Attack1 => "+attack; wait; -attack",
+    //             Command::WpnMoveSelect => "speak \"common/wpn_moveselect\"",
+    //             // Command::Emit(EmitInfo { sound, channel, volume }) => for,
+    //             _ => "",
+    //         }
+    //     )
+    // }
 }
 
 fn print_events(smf: &Smf) {
@@ -131,18 +211,31 @@ impl TrackSegment {
         }
     }
 }
-
 fn main() {
     // EDIT HERE
-    let smf = Smf::parse(include_bytes!("../examples/undertale_death_by_glamour_simplified.mid")).unwrap();
-    const ZEROFRAMETIME: f64 = 0.0000000000000000001;
+    let smf = Smf::parse(include_bytes!(
+        "../examples/smw_athletic_theme_pal_grunt2.mid"
+    ))
+    .unwrap();
+    const ZEROFRAMETIME: f64 = 0.000000000001;
     let sounds: Vec<Command> = vec![
-        Command::Nice2,
         Command::SwitchScroll(2),
-        Command::Flashlight,
-        Command::Use,
+        // Command::None,
+        Command::Nice3,
+        // Command::EmitDynamic(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 6, volume: 0.3, from: 37}),
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 3, volume: 0.1, from: 35}),
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 4, volume: 0.3, from: 36}),
+        // Command::Ducktap,
+        // Command::Emit(EmitInfo { sound: "player/pl_tile2.wav".to_string(), channel: 4, volume: 150, target: 0}),
+
+        // Command::SwitchScroll(2),
+        // Command::Use,
+        // Command::Nice2,
+        // Command::WpnMoveSelect,
+        // Command::Flashlight,
+        // Command::SwitchScroll(2),
     ];
-    let legato = true; // play notes in succession or have like 0.002s downtime to enounciate, true = saves more line
+    let legato = 1; // play notes in succession or have like 0.002s downtime to enounciate, true = saves more line
     let mut file = File::create("foo.txt").unwrap();
 
     // MAYBE NO NEED TO GO FROM HERE
@@ -157,14 +250,24 @@ fn main() {
         track_segments.push(TrackSegment::new());
     }
 
+    // If it doesn't match, panic right away.
+    if sounds.len() != track_segments.len() {
+        panic!(
+            "Mismatch number of selected sound ({}) and number of available tracks. ({})",
+            sounds.len(),
+            track_segments.len()
+        );
+    }
+
     while !track_segments.iter().fold(true, |acc, e| acc && e.end) && !IJUSTWANTTOREAD {
         let curr = &mut track_segments[curr_track];
 
-        // subarray of read_idx to continue reading from previous break
+        // Subarray of read_idx to continue reading from previous break
         for event in &smf.tracks[curr_track][curr.read_idx..] {
-            // note is still being quantized
+            // Note is still being quantized. Move onto the next track.
+            // Make sure to include quantize remainder.
             if curr.remainder > 0. {
-                continue;
+                break;
             }
 
             curr.read_idx += 1;
@@ -179,7 +282,7 @@ fn main() {
                     _ => (),
                 },
                 TrackEventKind::Midi {
-                    channel: _,
+                    channel: _, // Ignore this since we already know which track we are looking at from the loop.
                     message,
                 } => match message {
                     MidiMessage::NoteOn { key, vel } => {
@@ -194,7 +297,7 @@ fn main() {
             }
 
             if event.delta > (0 + legato as u32) {
-                // Read until there is delta, which now starts to break into hltas for the segment
+                // Read until there is delta, which now starts to break into hltas for the segment.
                 curr.tick = u32::from(event.delta);
                 curr.remainder = midi_tick_to_duration(tempo, curr.tick);
                 break;
@@ -211,13 +314,13 @@ fn main() {
             continue;
         }
 
-        // This ends the reading and writing if last read completes the read
+        // This ends the reading and writing if last read completes the read.
+        // HACK
         if track_segments.iter().fold(true, |acc, e| acc && e.end) {
             break;
         }
-        // println!("write");
-        let mut alt = 1;
-        // Write to hltas
+
+        // Write to hltas.
         // If there is one track is done quantized, loop will break.
         // Then continue reading from the previous left off index.
         while track_segments
@@ -241,19 +344,19 @@ fn main() {
                 .filter(|(_, e)| !e.end && e.key != 0 && e.quantize_remainder <= 0.)
                 .for_each(|(i, _)| {
                     if track_segments[i].vel == 0 {
-                        // Because of MIDI, info in an event is applied after delta
-                        // vel > 0 for that event means it is a rest.
-                        // write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, Command::Stopsound));
+                        // In MIDI, info in an event is applied after delta.
+                        // `vel > 0` for that event means it is a rest.
                         if !track_segments[i].new_beat && sounds[i] == Command::Ducktap {
                         } else {
                             if sounds[i] == Command::Attack1 {
                                 write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, Command::Attack1));
                             }
-                            write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, sounds[i]));
+                            write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, sounds[i].clone()));
                         }
 
                         track_segments[i].quantize_remainder =
-                            pitch_to_frametime(track_segments[i].key) - ZEROFRAMETIME;
+                            pitch_to_frametime(track_segments[i].key)
+                                .min(track_segments[i].remainder); // Min so it does not play extra when overdue.
                         track_segments[i].new_beat = false;
                     } else {
                         write!(
@@ -272,13 +375,12 @@ fn main() {
                 .iter()
                 .enumerate()
                 .filter(|(_, e)| !e.end)
-                .sorted_by(|(_, a), (_, b)| b.key.cmp(&a.key)) // for notes octaves higher
                 .sorted_by(|(_, a), (_, b)| a.quantize_remainder.total_cmp(&b.quantize_remainder))
                 .nth(0)
                 .unwrap()
                 .0;
-            let mut quantize_remainder = track_segments[lowest_index].quantize_remainder;
-            let frametime = pitch_to_frametime(track_segments[lowest_index].key);
+
+            let mut common_subtractee = track_segments[lowest_index].quantize_remainder;
 
             // If no notes are played, skip every notes.
             // if track_segments
@@ -323,19 +425,15 @@ fn main() {
                 write!(
                     file,
                     "{}",
-                    format_bulk(
-                        track_segments[lowest_index].quantize_remainder,
-                        1,
-                        Command::None,
-                    )
+                    format_bulk(common_subtractee, 1, Command::None,)
                 );
             }
             // update
             track_segments = track_segments
                 .iter()
                 .map(|e| TrackSegment {
-                    remainder: e.remainder - quantize_remainder,
-                    quantize_remainder: e.quantize_remainder - quantize_remainder,
+                    remainder: e.remainder - common_subtractee,
+                    quantize_remainder: e.quantize_remainder - common_subtractee,
                     ..*e
                 })
                 .collect_vec();
