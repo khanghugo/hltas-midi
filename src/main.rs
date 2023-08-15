@@ -1,11 +1,6 @@
-use std::{
-    f64, format,
-    fs::{self, File},
-    io::Write,
-    iter::Sum,
-};
+use std::{f64, format, fs::File, io::Write};
 
-use itertools::{sorted, Itertools};
+use itertools::Itertools;
 use midly::{MetaMessage, MidiMessage, Smf, TrackEventKind};
 
 fn pitch_frequency(key: u8) -> f64 {
@@ -32,7 +27,6 @@ fn frametime_tick_to_repeat(tempo: u32, frametime: f64, tick: u32) -> u32 {
 
 #[derive(Clone, PartialEq)]
 struct EmitInfo {
-    // #[derive(Copy)]
     sound: String,
     channel: i32,
     volume: f32,
@@ -61,8 +55,10 @@ enum Command {
     WpnMoveSelect,
     Emit(EmitInfo),
     EmitDynamic(EmitInfo),
+    PauseFinder,
 }
-static mut switch: u8 = 1;
+static mut COUNT: usize = 0;
+static mut SWITCH: u8 = 1;
 fn format_bulk(frametime: f64, repeat: u32, command: Command) -> String {
     match command {
         Command::Emit(EmitInfo {
@@ -89,17 +85,17 @@ fn format_bulk(frametime: f64, repeat: u32, command: Command) -> String {
         ),
         Command::Ducktap => format!("-----d----|------|------|{}|-|-|{}\n", frametime, repeat),
         Command::Use => format!("----------|------|--u---|{}|-|-|{}\n", frametime, repeat),
+        Command::PauseFinder => {
+            format!("----------|------|------|{}|-|-|{}|echo {}\n", frametime, repeat, {
+                unsafe {COUNT = COUNT + 1; COUNT}
+            })
+        }
         _ => format!(
             "----------|------|------|{}|-|-|{}|{}\n",
             frametime,
             repeat,
             match command {
                 Command::None => "",
-                // Command::Emit(EmitInfo {
-                //     sound,
-                //     channel,
-                //     volume,
-                // }) => format!("bxt_emit_sound {} {} {}", sound.clone(), channel, volume).as_str(),
                 Command::Flashlight => "impulse 100",
                 Command::Nice => "speak player/sprayer",
                 Command::Nice2 => "speak \"common/bodysplat(v30)\"",
@@ -115,8 +111,8 @@ fn format_bulk(frametime: f64, repeat: u32, command: Command) -> String {
                 },
                 Command::SwitchGroup => {
                     unsafe {
-                        switch = switch % 2 + 1;
-                        match switch {
+                        SWITCH = SWITCH % 2 + 1;
+                        match SWITCH {
                             1 => "slot1",
                             2 => "slot2",
                             _ => "slot0",
@@ -130,48 +126,6 @@ fn format_bulk(frametime: f64, repeat: u32, command: Command) -> String {
             }
         ),
     }
-    // if command == Command::Ducktap {
-    //     format!("-----d----|------|------|{}|-|-|{}\n", frametime, repeat)
-    // } else if command == Command::Use {
-    //     format!("----------|------|--u---|{}|-|-|{}\n", frametime, repeat)
-    // } else {
-    //     format!(
-    //         "----------|------|------|{}|-|-|{}|{}\n",
-    //         frametime,
-    //         repeat,
-    //         match command {
-    //             Command::None => "",
-    //             Command::Flashlight => "impulse 100",
-    //             Command::Nice => "speak player/sprayer",
-    //             Command::Nice2 => "speak \"common/bodysplat(v60)\"",
-    //             Command::Nice3 => "speak squad",
-    //             Command::SwitchScroll(num) => match num {
-    //                 0 => "slot0",
-    //                 1 => "slot1",
-    //                 2 => "slot2",
-    //                 3 => "slot3",
-    //                 4 => "slot4",
-    //                 5 => "slot5",
-    //                 _ => "",
-    //             },
-    //             Command::SwitchGroup => {
-    //                 unsafe {
-    //                     switch = switch % 2 + 1;
-    //                     match switch {
-    //                         1 => "slot1",
-    //                         2 => "slot2",
-    //                         _ => "slot0",
-    //                     }
-    //                 }
-    //             }
-    //             Command::Stopsound => "stopsound",
-    //             Command::Attack1 => "+attack; wait; -attack",
-    //             Command::WpnMoveSelect => "speak \"common/wpn_moveselect\"",
-    //             // Command::Emit(EmitInfo { sound, channel, volume }) => for,
-    //             _ => "",
-    //         }
-    //     )
-    // }
 }
 
 fn print_events(smf: &Smf) {
@@ -214,11 +168,18 @@ impl TrackSegment {
 fn main() {
     // EDIT HERE
     let smf = Smf::parse(include_bytes!(
+        // Edit file name here.
         "../examples/smw_athletic_theme_pal_grunt2.mid"
     ))
     .unwrap();
-    const ZEROFRAMETIME: f64 = 0.000000000001;
+
+    // Edit sound font here.
     let sounds: Vec<Command> = vec![
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 7, volume: 0.4, from: 0}),
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 1, volume: 0.3, from: 0}),
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 2, volume: 0.2, from: 0}),
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 3, volume: 0.1, from: 68}),
+        // Command::Emit(EmitInfo { sound: "common/bodysplat.wav".to_string(), channel: 4, volume: 0.1, from: 116}),
         Command::SwitchScroll(2),
         // Command::None,
         Command::Nice3,
@@ -235,14 +196,26 @@ fn main() {
         // Command::Flashlight,
         // Command::SwitchScroll(2),
     ];
-    let legato = 1; // play notes in succession or have like 0.002s downtime to enounciate, true = saves more line
-    let mut file = File::create("foo.txt").unwrap();
+    // Print echo after every sound emit to see where it stops due to level change.
+    let find_pause = false;
+    // Print some logs during conversion.
+    let print_midi = false;
 
+    //
+    //
+    //
+    //
     // MAYBE NO NEED TO GO FROM HERE
+    const ZEROFRAMETIME: f64 = 0.000000000001;
+    let legato = 1; // play notes in succession or have like 0.002s downtime to enounciate, true = saves more line
+
+    let mut file = File::create("foo.txt").unwrap();
     const IJUSTWANTTOREAD: bool = false;
     let mut tempo = 0;
-    let mut result: Vec<String> = Vec::new();
-    print_events(&smf);
+
+    if print_midi {
+        print_events(&smf);
+    }
 
     let mut curr_track = 0;
     let mut track_segments: Vec<TrackSegment> = Vec::new();
@@ -330,10 +303,10 @@ fn main() {
             == 0
         {
             // See how many tracks will be worked on.
-            let work_count = track_segments
-                .iter()
-                .filter(|e| !e.end && e.vel == 0)
-                .count();
+            // let work_count = track_segments
+            //     .iter()
+            //     .filter(|e| !e.end && e.vel == 0)
+            //     .count();
 
             // Attempts to add note
             // if work_count != 1 {
@@ -349,9 +322,11 @@ fn main() {
                         if !track_segments[i].new_beat && sounds[i] == Command::Ducktap {
                         } else {
                             if sounds[i] == Command::Attack1 {
-                                write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, Command::Attack1));
+                                write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, Command::Attack1))
+                                    .unwrap();
                             }
-                            write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, sounds[i].clone()));
+                            write!(file, "{}", format_bulk(ZEROFRAMETIME, 1, sounds[i].clone()))
+                                .unwrap();
                         }
 
                         track_segments[i].quantize_remainder =
@@ -363,7 +338,8 @@ fn main() {
                             file,
                             "{}",
                             format_bulk(ZEROFRAMETIME, 1, Command::Stopsound)
-                        );
+                        )
+                        .unwrap();
                         track_segments[i].quantize_remainder = track_segments[i].remainder;
                     }
                 });
@@ -380,53 +356,24 @@ fn main() {
                 .unwrap()
                 .0;
 
-            let mut common_subtractee = track_segments[lowest_index].quantize_remainder;
+            let common_subtractee = track_segments[lowest_index].quantize_remainder;
 
-            // If no notes are played, skip every notes.
-            // if track_segments
-            //     .iter()
-            //     .fold(true, |acc, e| !e.end && e.vel > 0 && acc)
-            // {
-            //     // println!("{:?}", track_segments);
-            //     result.push("this bulk no playing\n".to_string());
-            //     result.push(format_bulk(frametime, frametime_tick_to_repeat(tempo, frametime, track_segments[lowest_index].tick), Command::None));
-            //     track_segments = track_segments
-            //         .iter()
-            //         .map(|e| TrackSegment {
-            //             remainder: e.remainder - quantize_remainder,
-            //             quantize_remainder: e.quantize_remainder - quantize_remainder,
-            //             ..*e
-            //         })
-            //         .collect_vec();
+            if find_pause {
+                write!(
+                    file,
+                    "{}",
+                    format_bulk(ZEROFRAMETIME, 1, Command::PauseFinder)
+                )
+                .unwrap();
+            }
 
-            //     break;
-            // }
-
-            // if work_count == 1 {
-            //     if quantize_remainder > track_segments[lowest_index].remainder
-            //         || quantize_remainder == 0.
-            //     {
-            //         quantize_remainder = track_segments[lowest_index].remainder;
-            //     }
-
-            //     println!("this prints {:?} {}", track_segments, quantize_remainder);
-            //     // result.push("this bulk one playing\n".to_string());
-            //     write!(
-            //         file,
-            //         "{}",
-            //         format_bulk(
-            //             frametime,
-            //             (quantize_remainder / frametime) as u32,
-            //             sounds[lowest_index],
-            //         )
-            //     );
-            // } else
             {
                 write!(
                     file,
                     "{}",
                     format_bulk(common_subtractee, 1, Command::None,)
-                );
+                )
+                .unwrap();
             }
             // update
             track_segments = track_segments
@@ -443,9 +390,4 @@ fn main() {
             // }
         }
     }
-
-    // for i in result {
-    //     // print!("{}", i)
-    //     write!(file, "{}", i);
-    // }
 }
