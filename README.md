@@ -3,7 +3,7 @@
 Generates a .hltas file from a .mid file to "play the midi" in-game by creating pitch from sounds in Half-Life games.
 Requires ![BunnymodXT](https://github.com/YaLTeR/BunnymodXT) to load the script and ![bxt-rs](https://github.com/YaLTeR/bxt-rs) to record video.
 
-![Example](https://youtu.be/fbyGEyvEn4c)
+[Example](https://youtu.be/fbyGEyvEn4c)
 
 Yes polyphonic.
 
